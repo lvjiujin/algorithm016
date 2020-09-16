@@ -39,11 +39,42 @@ https://www.zhihu.com/question/387295413/answer/1154369980
 > #### 一维数据结构
 >
 > 1. 数组 array，查询速度快，时间复杂度O(1)，删除、添加的速度慢，时间复杂度O(n)。
+>
+>    * 练习题目：leetcode 26:删除排序数组中的重复项, 88:合并两个有序数组，189：旋转数组，349:数组的交集,350 数组的交集二
+>
 > 2. 链表 linked list，查询速度慢，时间复杂度O(n)；删除、添加的速度快，时间复杂度O(1)。
+>
+>    * 练习题目：leetcode 21:合并两个有序链表,24: 两两交换链表中的节点，141：环形链表，142 环形链表二。 
+>
 > 3. 栈 stack, 先进后出 FILO，查询速度为O(n)；删除、添加的速度快，时间复杂度O(1)。
+>
+>    - 单调栈的练习题目：
+>
+>      | 1    | [42. 接雨水（困难）](https://leetcode-cn.com/problems/trapping-rain-water/) | [暴力解法、优化、双指针、单调栈](https://leetcode-cn.com/problems/trapping-rain-water/solution/bao-li-jie-fa-yi-kong-jian-huan-shi-jian-zhi-zhen-/) |
+>      | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+>      | 2    | [739. 每日温度（中等）](https://leetcode-cn.com/problems/daily-temperatures/) | [暴力解法 + 单调栈](https://leetcode-cn.com/problems/daily-temperatures/solution/bao-li-jie-fa-dan-diao-zhan-by-liweiwei1419/) |
+>      | 3    | [496. 下一个更大元素 I（简单）](https://leetcode-cn.com/problems/next-greater-element-i/) | [暴力解法、单调栈](https://leetcode-cn.com/problems/next-greater-element-i/solution/bao-li-jie-fa-dan-diao-zhan-by-liweiwei1419-2/) |
+>      | 4    | [316. 去除重复字母（困难）](https://leetcode-cn.com/problems/remove-duplicate-letters/) | [栈 + 哨兵技巧（Java、C++、Python）](https://leetcode-cn.com/problems/remove-duplicate-letters/solution/zhan-by-liweiwei1419/) |
+>      | 5    | [901. 股票价格跨度（中等）](https://leetcode-cn.com/problems/online-stock-span/) | [「力扣」第 901 题：股票价格跨度（单调栈）](https://blog.csdn.net/lw_power/article/details/103957702) |
+>      | 6    | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) |                                                              |
+>      | 7    | [581. 最短无序连续子数组](https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/) |                                                              |
+>
+>    - 239：滑动窗口最大值也用到单调栈的思想。
+>
 > 4. 队列 queue，先进先出，FIFO，查询速度为O(n)；删除、添加的速度快，时间复杂度O(1)。
+>
+>    队列：普通队列，双端队列，循环队列，双端循环队列。
+>
+>    * 练习题目：leetcode 622:设计循环队列,641:设计循环双端队列。239：滑动窗口最大值.
+>
 > 5. 双端队列 deque, queue 和 stack 的结合体，头和尾都可以进行元素的push和pop，查询速度为O(n)，删除、添加速度为O(1)。
-> 6. 集合 set,
+>
+>    * 练习题目：leetcode 239:滑动窗口最大值
+>
+> 6. 集合 set
+>
+>    * 练习题目：leetcode 1. 两数之和.
+>
 > 7. hash表 map, python中对应为dict. 
 >
 > #### 二维数据结构
