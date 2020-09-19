@@ -5,19 +5,23 @@
 #
 
 # @lc code=start
+from functools import lru_cache
 class Solution:
     def climbStairs(self, n: int) -> int:
         # f(n) = f(n -1) + f(n-2)
         f0, f1 = 0, 1
-        i = 0 
-        f2 = 0
-        while i < n:
-            f2 = f0 + f1
-            f0 = f1
-            f1 = f2
-            i+=1
         
-        return f2
+        # for _ in range(n):
+        #     f0, f1 = f1, f0 + f1
+        # return f1
+        # 尾递归
+        return self.helper(n, f0, f1)
+    @lru_cache
+    def helper(self, n, f0, f1):
+        if n < 0:
+            return f0
+        return self.helper(n - 1, f1, f0+f1)
+
         # 矩阵快速幂的方法，时间复杂度为logn.
         # def multiply(a, b):
         #     c = [[0, 0], [0, 0]]
@@ -41,6 +45,13 @@ class Solution:
         # # print("res = ", res)
         
         # return res[0][0]
-        
-# @lc code=end
 
+# def main():
+#     solu = Solution()
+#     res = solu.climbStairs(5)
+#     print("res = ", res)
+
+# if __name__ == "__main__":
+#     main()
+   
+# @lc code=end
