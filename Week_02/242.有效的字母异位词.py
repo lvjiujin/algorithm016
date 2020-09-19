@@ -24,7 +24,7 @@ class Solution:
         
         # return True
         # 方法二，利用a-z 26个字母的范围的ascii，将ascii的范围限制在0~25. 字符-'a' 
-        # record = [0 for _ in range(26)]
+        record = [0 for _ in range(26)]
         # ord convert the char character to interger. 97 represent the alpha 'a'
         # https://leetcode-cn.com/problems/valid-anagram/solution/242-you-xiao-de-zi-mu-yi-wei-ci-shu-zu-zai-ha-xi-f/
         for i in range(len(s)):
