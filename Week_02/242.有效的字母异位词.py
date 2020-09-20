@@ -28,8 +28,8 @@ class Solution:
         # ord convert the char character to interger. 97 represent the alpha 'a'
         # https://leetcode-cn.com/problems/valid-anagram/solution/242-you-xiao-de-zi-mu-yi-wei-ci-shu-zu-zai-ha-xi-f/
         for i in range(len(s)):
-            record[ord(s[i]) - 97] +=1
-            record[ord(t[i]) - 97] -=1
+            record[ord(s[i]) - ord('a')] +=1
+            record[ord(t[i]) - ord('a')] -=1
         
         for x in record:
             if x !=0:

@@ -23,6 +23,8 @@ class Solution:
         https://leetcode-cn.com/problems/n-th-tribonacci-number/solution/wei-di-gui-by-creammangopie/
 
         """
+        # 方法三：矩阵快速幂
+        # 这种方法比较麻烦
     def tri(self, n, res1, res2, res3):
         if n <= 0:
             return res1
