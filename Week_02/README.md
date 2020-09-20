@@ -317,21 +317,42 @@ heap 是一种数据结构具有以下的特点：
 
   https://leetcode-cn.com/problems/climbing-stairs/solution/pa-lou-ti-de-olognzui-qiang-suan-fa-ju-zhen-kuai-s/
 
+  #### 4. 丑数
+
+  这个的确代码很巧妙，值得学习。
+
+  ````python
+  class Solution:
+      def isUgly(self, num: int) -> bool:
+      	# 丑数就是只包含质因数 2, 3, 5 的正整数。
+          if num == 1:
+              return True
+          if num < 1:
+              return False
+          while num % 2 ==0: num/=2
+          while num % 3 ==0:num/=3
+          while num % 5 == 0:num/=5
+          
+          return num == 1
+  ````
+  
+  
+  
   ### 4. 补充一下图
-
+  
   手敲一遍也有个大概印象
-
+  
   ````python
   visited = set() # 和树中的DFS最大区别,因为有环（可能重复访问）
   def dfs(node, visited):
   	if node in visited:
-          # already visited, so terminator
+        # already visited, so terminator
           return 
-      visited.add(node)
+    visited.add(node)
       # process current node here.
-      for next_node in node.children():
+    for next_node in node.children():
           if not next_node in visited:
-              dfs(next_node, visited)
+            dfs(next_node, visited)
               
   def BFS(graph, start, end):
       queue = []
@@ -346,13 +367,13 @@ heap 是一种数据结构具有以下的特点：
   def generate_related_nodes(node):
       pass
   ````
-
   
-
   
-
   
-
+  
+  
+  
+  
   
 
 ### reference
@@ -365,6 +386,10 @@ heap 是一种数据结构具有以下的特点：
 
 - 连通图个数：[ https://leetcode-cn.com/problems/number-of-islands/](https://leetcode-cn.com/problems/number-of-islands/)
 - 拓扑排序（Topological Sorting）：[ https://zhuanlan.zhihu.com/p/34871092](https://zhuanlan.zhihu.com/p/34871092)
+- 拓扑排序（leetcode）https://leetcode-cn.com/problems/course-schedule-ii/description/
+- https://leetcode-cn.com/problems/sequence-reconstruction/
+- https://leetcode-cn.com/problems/alien-dictionary/
+- https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
 - 最短路径（Shortest Path）：Dijkstra https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158
 - 最小生成树（Minimum Spanning Tree）：[ https://www.bilibili.com/video/av84820276?from=search&seid=17476598104352152051](https://www.bilibili.com/video/av84820276?from=search&seid=17476598104352152051)
 

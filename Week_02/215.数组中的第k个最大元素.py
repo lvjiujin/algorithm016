@@ -8,10 +8,19 @@
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         # 排序法：
-        if not nums:
-            return None
-        nums.sort(reverse = True)
-        return nums[k-1]
+        # if not nums:
+        #     return None
+        # nums.sort(reverse = True)
+        # return nums[k-1]
+        # heap 
+        import heapq
+        heap = []
+        heapq.heapify(heap)
+        for num in nums:
+            heapq.heappush(heap, num)
+            if len(heap) > k:
+                heapq.heappop(heap)
+        return heap[0]
 
 # @lc code=end
 
