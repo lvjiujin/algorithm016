@@ -117,6 +117,24 @@ def preorder(self,root):
 
 * 树的深度优先(DFS)和广度优先(BFS)
 
+  DFS: 在这个策略中，我们采用`深度`作为优先级，以便从跟开始一直到达某个确定的叶子，然后再返回根到达另一个分支。
+
+  深度优先示意图:
+
+  ![DFS](./DFS.png)
+
+  深度优先搜索策略又可以根据根节点、左孩子和右孩子的相对顺序被细分为`前序遍历`，`中序遍历`和`后序遍历`。
+
+  BFS: 我们按照高度顺序一层一层的访问整棵树，高层次的节点将会比低层次的节点先被访问到。
+
+  BFS示意图：
+
+  ![](./BFS.png)
+
+  下图中的顶点按照访问的顺序编号，按照 `1-2-3-4-5` 的顺序来比较不同的策略。
+
+  ![DFS和BFS比较](./DFS_BFS.png)
+
 * 二叉搜索树
   也称二叉 排序 树 、有序二叉树（ Ordered Binary Tree ）、 排序二叉树（ Sorted Binary Tree 是指一棵空树或者具有下列性质的二叉树
 
@@ -124,6 +142,26 @@ def preorder(self,root):
   2. 右子树上 所有结点 的值均大于它的根结点的值
   3. 以此类推：左、右子树也分别为二叉查找树 。 这就是 重复性
   中序遍历：升序排列
+
+* 二叉树的遍历的迭代模板(伪代码)：
+
+  参考链接：https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/tu-jie-er-cha-shu-de-si-chong-bian-li-by-z1m/
+
+  ````python
+  边界条件
+  
+  初始化 cur, stack, root
+  while stack or cur != None:
+      while 循环:
+          cur 向左下或右下遍历
+      弹出节点 tmp
+      cur 回到 tmp 的左或右子树
+  返回结果
+  ````
+
+  代码实现见链接：
+
+  https://shimo.im/docs/D68KxVpHjWGdJXk3
 
 * 树的题目：
 
@@ -370,9 +408,17 @@ heap 是一种数据结构具有以下的特点：
   
   
   
+  #### 5. 莫里斯遍历
   
+  这个是二叉树遍历的一种简便方法，没看懂。
   
+  给出链接吧，后续有空了去专门学习下。
   
+  莫里斯遍历：https://www.sciencedirect.com/science/article/abs/pii/0020019079900681
+  
+  论文标题：Traversing binary trees simply and cheaply
+  
+  https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/er-cha-shu-de-qian-xu-bian-li-by-leetcode/
   
   
 

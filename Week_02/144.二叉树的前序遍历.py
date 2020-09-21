@@ -14,9 +14,28 @@
 
 class Solution:
     def preorderTraversal(self, root: TreeNode) -> List[int]:
-        res = list()
-        self.preorder(root,res)
-        return res
+       # 方法一：直接套用pre-order 递归的模板
+        # res = list()
+        # self.preorder(root,res)
+        # return res
+        # 方法二：用栈来模拟前序遍历 （DFS）
+        # 先将右节点入栈，再将左节点入栈，这样保证出栈的顺序是先左后右。
+        # 时间复杂度 O(n),访问每个节点恰好一次， 空间复杂度最坏情况下是整棵树O(n)
+        if not root:
+            return []
+
+        stack, output = [root,],[]
+        while stack:
+            root = stack.pop()
+            if root:
+                output.append(root.val)
+                if root.right:
+                    stack.append(root.right)
+                if root.left:
+                    stack.append(root.left)
+        return output
+        # 方法三：莫里斯遍历:
+            # pass
     def preorder(self, root, res):
         if not root:
             return 
