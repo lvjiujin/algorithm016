@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2020-09-24 12:32:06
-LastEditTime: 2020-09-25 13:02:04
+LastEditTime: 2020-09-25 14:23:24
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: \Week_03\106.从中序与后序遍历序列构造二叉树.py
@@ -34,7 +34,7 @@ class Solution:
             # 根据 root 所在位置分成左右两棵子树
             index = idx_map[val]
  
-            # 构造右子树
+            # 构造右子树, 注意这里的顺序，一定是先构建右子树，再构建左子树
             root.right = helper(index + 1, in_right)
             # 构造左子树
             root.left = helper(in_left, index - 1)
