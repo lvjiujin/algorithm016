@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2020-09-24 12:06:33
-LastEditTime: 2020-09-25 22:19:15
+LastEditTime: 2020-09-25 22:26:42
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: \Week_03\52.n皇后-ii.py
@@ -20,6 +20,7 @@ class Solution:
             if p == n:
                 result.append(queens)
                 return None
+            # print("queens = ", queens)
             for q in range(n): # q is the index of col 
                 # queens stores those used cols, for example, [0,2,4,1] means these cols have been used
                 # xy_dif is the diagonal 1 main diagonal
@@ -31,7 +32,7 @@ class Solution:
         
         DFS([], [], [])
         # print the N-queen checkerboard：
-         # print("result = ", result )
+        # print("result = ", result )
         # output =  [["." * i + "Q" + "." * (n - i - 1) for i in sol] for sol in result]
         # for x in output:
         #     print("[" + ',\n'.join(x)+ ']')
