@@ -476,6 +476,10 @@ class Solution:
 
 回朔法2：https://leetcode-cn.com/problems/n-queens/solution/hui-su-suan-fa-xiang-jie-by-labuladong/
 
+https://www.globalsoftwaresupport.com/backtracking-algorithms-explained/
+
+https://evantamle.wordpress.com/2019/05/25/how-to-apply-pruning-technique-and-heuristic-in-backtracking-algorithms/
+
 一个神奇而厉害的女博士的算法路：https://happygirlzt.com/codelist.html
 
 
