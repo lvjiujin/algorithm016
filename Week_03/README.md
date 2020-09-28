@@ -238,12 +238,13 @@ class Solution:
         dfs(nums, size, 0, [], used, res)
         return res
 
-
-if __name__ == '__main__':
+def main():
     nums = [1, 2, 3]
     solution = Solution()
     res = solution.permute(nums)
     print(res)
+if __name__ == '__main__':
+    main()
 ````
 
 ##### 理解回溯
