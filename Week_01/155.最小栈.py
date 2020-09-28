@@ -37,6 +37,40 @@ class MinStack:
     def getMin(self) -> int:
         return self.min_stack[-1]
 
+    # 方法二:
+    '''
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.stack = []
+        
+
+    def push(self, x: int) -> None:
+        if not self.stack:
+            self.stack.append((x, x))
+        else:
+            self.stack.append((x, self.stack[-1][1]))
+        
+        
+    def pop(self) -> None:
+        if self.stack:
+            self.stack.pop()
+        
+            
+    def top(self) -> int:
+        if self.stack:
+            return self.stack[-1][0]
+        else:
+            return None
+
+    def getMin(self) -> int:
+        if self.stack:
+            return self.stack[-1][1]
+        else:
+            return None
+    '''
+
 
 
 # Your MinStack object will be instantiated and called as such:
