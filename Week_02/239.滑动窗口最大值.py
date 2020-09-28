@@ -31,8 +31,10 @@ class Solution:
             while d and e > nums[d[-1]]:
                 d.pop()
             d.append(i)
+            # 当栈底元素不在滑动窗口内时，从栈底删除该元素。
             if d[0] == i - k:
                 d.popleft()
+            # 从下标k-1,也就是第k个元素开始就可以找到最大值了。
             if i >= k-1:
                 out.append(nums[d[0]])
         
