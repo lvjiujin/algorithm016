@@ -333,7 +333,7 @@ if __name__ == '__main__':
 
 例如：n = 6 ，k = 4。
 
-> len(path) == 1 的时候，接下来要选择 33个数，搜索起点最大是 4，最后一个被选的组合是 [4, 5, 6]；
+> len(path) == 1 的时候，接下来要选择 3个数，搜索起点最大是 4，最后一个被选的组合是 [4, 5, 6]；
 > len(path) == 2 的时候，接下来要选择 2 个数，搜索起点最大是 5，最后一个被选的组合是 [5, 6]；
 > len(path) == 3 的时候，接下来要选择 1 个数，搜索起点最大是 6，最后一个被选的组合是 [6]；
 
@@ -380,7 +380,7 @@ class Solution:
                 return
             # 我们的剪枝过程就是：把 i <= n 改成 i <= n - (k - path.size()) + 1 
             for i in range(begin, n - (k - len(path)) + 1 + 1):
-                path+=i
+                path.append(i)
                 dfs_pruning(n, k, i + 1, path, res)
                 path.pop()
         res = []
