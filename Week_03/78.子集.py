@@ -25,24 +25,44 @@ class Solution:
         #     print("res = ", res)
         
         # return res
-        # 递归：回朔法,算是非常简单逻辑的回朔法了。
-        res = []
-        n = len(nums)
+        # 递归： 这个思路很难懂。
+        # res = []
+        # n = len(nums)
         
-        def helper(i, tmp):
-            res.append(tmp)
-            for j in range(i, n):
-                helper(j + 1,tmp + [nums[j]] )
-        helper(0, [])
-        return res 
+        # def helper(i, tmp):
+        #     print("tmp = ", tmp)
+        #     res.append(tmp)
+        #     print("i = ", i)
+        #     for j in range(i, n):
+        #         print("j = ", j)
+        #         print("nums[{}] = {}".format(j, nums[j]))
+        #         helper(j + 1,tmp + [nums[j]] )
+        # helper(0, [])
+        # return res 
+        # 回溯:
+        res = []
+        # 我们用指针index描述一个节点的状态，即当前递归考察的数字 nums[index]
+        def backtrack(index, path):
+            # 指针越界，加入解集，结束当前的递归。
+            if index == len(nums):
+                res.append(path[:])
+                return
+            # 选择这个元素
+            path.append(nums[index])
+            backtrack(index + 1, path) # 往下递归
+            path.pop() # 递归结束，撤销选择
+            backtrack(index + 1, path) # 不选这个元素，往下递归
+        backtrack(0, [])
+        return res
 
-# def main():
-#     mysolu = Solution()
-#     nums = [1,2,3]
-#     res = mysolu.subsets(nums)
-#     print("res = ", res)
 
-# if __name__ == '__main__':
-#     main()
+def main():
+    mysolu = Solution()
+    nums = [1,2,3]
+    res = mysolu.subsets(nums)
+    print("res = ", res)
+
+if __name__ == '__main__':
+    main()
 # @lc code=end
 
