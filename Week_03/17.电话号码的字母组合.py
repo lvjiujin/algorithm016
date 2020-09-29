@@ -31,18 +31,45 @@ class Solution:
         # https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/solution/dian-hua-hao-ma-de-zi-mu-zu-he-by-leetcode-solutio/
         # https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/solution/hui-su-dui-lie-tu-jie-by-ml-zimingmeng/
 
-        def backtrack(comb,nextdigit):
-            if len(nextdigit) == 0:
-                res.append(comb)
-            else:
-                for letter in phone_key[nextdigit[0]]:
-                    backtrack(comb + letter, nextdigit[1:])
+        # def backtrack(comb,nextdigit):
+        #     if len(nextdigit) == 0:
+        #         res.append(comb)
+        #     else:
+        #         for letter in phone_key[nextdigit[0]]:
+        #             backtrack(comb + letter, nextdigit[1:])
 
-        res = []
-        backtrack('',digits)
-        return res
-
-
+        # res = []
+        # backtrack('',digits)
+        # return res
+        # 简单易懂的回溯法
+        key_board_dict = {
+            '2': 'abc',
+            '3': 'def',
+            '4': 'ghi',
+            '5': 'jkl',
+            '6': 'mno',
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
+        }
+      
+        if not digits:
+            return []
+        
+        result = []
+        
+        def make_combinations(i, cur):
+            if i == len(digits):
+                result.append(''.join(cur))
+                return
+            for ch in key_board_dict[digits[i]]:
+                cur.append(ch)
+                make_combinations(i+1, cur)
+                cur.pop()
+        
+        make_combinations(0, [])
+        return result
+        
 
 # @lc code=end
 
