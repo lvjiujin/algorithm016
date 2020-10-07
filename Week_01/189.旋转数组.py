@@ -10,13 +10,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        # N = len(nums)
-        # for j in range(k):
-        #     for i in range(N-1,0,-1):
-        #         temp = nums[i]
-        #         nums[i] = nums[i-1]
-        #         nums[i-1] = temp
-   
+        # 方法一：观察结果，充分利用Python的切片功能
         # k = k % len(nums)
         # nums[:] = nums[-k:] + nums[:-k] 
 
@@ -25,23 +19,27 @@ class Solution:
         #     return
         # nums[:k], nums[k:] = nums[-k:], nums[:-k]
       
-        # n = len(nums)
-        # k = k % n
-        # # if not k:
-        # #     return 
-        # nums[:] = nums[n-k:] + nums[:n-k]
 
+        # 递归的这种方法，占用空间最小
+        # 三次反转
         if k is None or k <= 0:
             return
         k, end = k % len(nums), len(nums) - 1
-        self.reverse(nums, 0, end - k)
-        self.reverse(nums, end - k + 1, end)
-        self.reverse(nums, 0, end)
         
-    def reverse(self, nums, start, end):
-        while start < end:
-            nums[start], nums[end] = nums[end], nums[start]
-            start, end = start + 1, end - 1
+        def reverse(nums, start, end):
+            while start < end:
+                nums[start], nums[end] = nums[end], nums[start]
+                start += 1
+                end -= 1
+        # 第一次整体反转
+        reverse(nums, 0, end)
+        # 第二次反转前k个数
+        reverse(nums, 0, k-1)
+        # 第三次反转后面的部分
+        reverse(nums,k, end)
+        
+        
+ 
            
         
 
