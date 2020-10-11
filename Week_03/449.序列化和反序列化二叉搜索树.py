@@ -12,7 +12,7 @@
 #         self.left = None
 #         self.right = None
 
-class Codec:
+class Codec2:
     # 核心思想就是序列化以后，如何将二叉搜索树还原出来。
     # inorder = sorted(preorder)
     def serialize(self, root: TreeNode) -> str:
@@ -47,8 +47,35 @@ class Codec:
             root.right = self.buildTree(preorder,inorder[index+1:])
             return root
 
+class Codec:
 
-       
+    def serialize(self, root):
+        vals = []
+
+        def preOrder(node):
+            if node:
+                vals.append(node.val)
+                preOrder(node.left)
+                preOrder(node.right)
+
+        preOrder(root)
+
+        return ' '.join(map(str, vals))
+
+    # O( N ) since each val run build once
+    def deserialize(self, data):
+        from collections import deque
+        vals = deque(int(val) for val in data.split())
+
+        def build(minVal, maxVal):
+            if vals and minVal < vals[0] < maxVal:
+                val = vals.popleft()
+                node = TreeNode(val)
+                node.left = build(minVal, val)
+                node.right = build(val, maxVal)
+                return node
+
+        return build(float('-inf'), float('inf'))   
 
 
 # Your Codec object will be instantiated and called as such:
