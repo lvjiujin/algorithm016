@@ -13,7 +13,8 @@
 #         self.right = None
 
 class Codec:
-
+    # 核心思想就是序列化以后，如何将二叉搜索树还原出来。
+    # inorder = sorted(preorder)
     def serialize(self, root: TreeNode) -> str:
         """Encodes a tree to a single string.
         """
@@ -32,6 +33,8 @@ class Codec:
     def deserialize(self, data: str) -> TreeNode:
         """Decodes your encoded data to tree.
         """
+        if not data:
+            return None
         preorder = list(map(int, data.split()))
         inorder = sorted(preorder)
         return self.buildTree(preorder, inorder)
