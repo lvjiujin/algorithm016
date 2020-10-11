@@ -52,7 +52,6 @@ class Codec2:
         data = data.split(",")
         root = TreeNode(data.pop(0))
         queue = [root]
-        index, L = 1, len(data)
         while queue:
             node = queue.pop(0)
             if data:
