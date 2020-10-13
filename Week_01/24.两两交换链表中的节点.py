@@ -11,8 +11,9 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
-    def swapPairs(self, head: ListNode) -> ListNode:
+    def swapPairs2(self, head: ListNode) -> ListNode:
         # 用递归法
         # https://lyl0724.github.io/2020/01/25/1/
         """
@@ -27,9 +28,24 @@ class Solution:
         # 一共三个节点:head, node, swapPairs(node.next)
       	# 下面的任务便是交换这3个节点中的前两个节点
         node = head.next
-        head.next = self.swapPairs(node.next)
+        head.next = self.swapPairs2(node.next)
         node.next = head 
-        return node 
+        return node
+    # 迭代法，非递归
+    def swapPairs(self, head: ListNode) -> ListNode:
+        if not head or not head.next:
+            return head
+        dummpy = ListNode(0)
+        dummpy.next = head
+        temp = dummpy
+        while temp.next and temp.next.next:
+            node1 = temp.next
+            node2 = temp.next.next
+            temp.next = node2
+            node1.next = node2.next
+            node2.next = node1
+            temp = node1
+        return dummpy.next
 
 
 # @lc code=end
