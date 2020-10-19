@@ -485,5 +485,5 @@ https://evantamle.wordpress.com/2019/05/25/how-to-apply-pruning-technique-and-he
 
 关于鸡蛋掉落问题的讨论：https://github.com/Shellbye/Shellbye.github.io/issues/42
 
-
+N皇后的复杂度分析：https://sites.google.com/site/nqueensolver/home/algorithm-results
 
